@@ -1,0 +1,92 @@
+{
+  "name": "makeuc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@auth0/auth0-react": "^2.2.3",
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "autoprefixer": "^10.4.16",
+    "axios": "^1.6.0",
+    "firebase": "^10.5.2",
+    "firebase-react-hooks": "^0.8.0",
+    "framer-motion": "^10.16.4",
+    "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "react-big-calendar": "^1.8.5",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.18.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "react-typescript"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts",
+          "**/*.tsx"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "ecmaVersion": 2018,
+          "sourceType": "module",
+          "ecmaFeatures": {
+            "jsx": true
+          },
+          "warnOnUnsupportedTypeScriptVersion": true
+        },
+        "plugins": [
+          "@typescript-eslint"
+        ],
+        "rules": {
+          "default-case": "off",
+          "no-dupe-class-members": "off",
+          "@typescript-eslint/no-angle-bracket-type-assertion": "warn",
+          "no-array-constructor": "off",
+          "@typescript-eslint/no-array-constructor": "warn",
+          "@typescript-eslint/no-namespace": "error",
+          "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+              "args": "none",
+              "ignoreRestSiblings": true
+            }
+          ],
+          "no-useless-constructor": "off",
+          "@typescript-eslint/no-useless-constructor": "warn"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
