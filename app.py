@@ -83,7 +83,7 @@ vectorizer = CountVectorizer(ngram_range=(1, 2))
 # Fit the CountVectorizer object to the training data
 vectorizer.fit(X_train)
 
-# Transform the training and test data into vectors
+#Transform the training and test data into vectors
 #X_train_vectors = vectorizer.transform(X_train)
 #X_test_vectors = vectorizer.transform(X_test)
 
@@ -211,16 +211,16 @@ def alert():
     for document in documents :
         journals.append(document['text'])
 
-    #response = sentiment_chain({"person_name" : name, "journal_entries": journals})
+    response = sentiment_chain({"person_name" : name, "journal_entries": journals})
 
-    #tmp = json.dumps(response)
-    #output = json.loads(tmp)
+    tmp = json.dumps(response)
+    output = json.loads(tmp)
 
-    #body = json.loads(output['text'])['body']
+    body = json.loads(output['text'])['body']
 
-    #send_email(receipient, body)
+    send_email(receipient, body)
 
-    #return data
+    return data
 
 if __name__ == '__main__':
     app.run(debug=True)
