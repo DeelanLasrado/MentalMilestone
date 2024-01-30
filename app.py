@@ -188,10 +188,49 @@ def test():
 
 
 
-def send_email(recipient, body):
+'''def send_email(recipient, body):
     msg = MIMEText(body)
     sender = 'deelanlasrado44@gmail.com'
     password = 'Deelanlasrado2003'
+    msg['Subject'] = 'Help Needed'
+
+    with smtplib.SMTP('smtp-mail.outlook.com', 587) as server:
+        server.starttls()
+        server.login(sender, password)
+        server.sendmail(sender, recipient, msg.as_string())
+        print("Message sent!")'''
+
+#@app.route('/alert', methods=['POST'])
+#def alert():
+    #data = request.get_json()
+    #receipient = data['email']
+    #documents = data['data']
+    #name = data['name']
+
+    #journals = []
+    #for document in documents :
+     #   journals.append(document['text'])
+
+    #response = sentiment_chain({"person_name" : name, "journal_entries": journals})
+
+   # tmp = json.dumps(response)
+    #output = json.loads(tmp)
+
+    #body = json.loads(output['text'])['body']
+
+    #send_email(receipient, body)
+
+    #return data
+
+
+
+#####################################################################################################################
+
+
+def send_email(recipient, body):
+    msg = MIMEText(body)
+    sender = 'deelan.cs21@sahyadri.edu.in'
+    password = 'deelan2003'
     msg['Subject'] = 'Help Needed'
 
     with smtplib.SMTP('smtp-mail.outlook.com', 587) as server:
@@ -203,24 +242,45 @@ def send_email(recipient, body):
 @app.route('/alert', methods=['POST'])
 def alert():
     data = request.get_json()
-    receipient = data['email']
+    recipient = data['email']
     documents = data['data']
     name = data['name']
 
     journals = []
-    for document in documents :
+    for document in documents:
         journals.append(document['text'])
 
-    response = sentiment_chain({"person_name" : name, "journal_entries": journals})
+    #sentiment_result = predict_sentiment(query)
+    #print(sentiment_result)
+    #return jsonify({"sentiment": sentiment_result})
+    response = {"person_name": name, "journal_entries": journals}
 
     tmp = json.dumps(response)
     output = json.loads(tmp)
 
-    body = json.loads(output['text'])['body']
+    body = f"""
+            Summary line: You are a helpful mental health bot. Analyze the given journals by {name} and seek insights.
+            Explain the situation to the writer's loved ones in a friendly manner and also suggest ways his loved ones can help him.
 
-    send_email(receipient, body)
+            {', '.join(journals)}
+            """
+    print(body)
+    print(data)
+    send_email(recipient, body)
 
     return data
+
+
+    #tmp = json.dumps(response)
+    #output = json.loads(tmp)
+
+    #body = json.loads(output['text'])['body']
+
+    #send_email(recipient, body)
+
+    #return data
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

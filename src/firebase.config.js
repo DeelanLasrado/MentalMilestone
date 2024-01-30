@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyC8jqO7C94GcEmN4C9xiikW4K7FmRIuYIg",
-  authDomain: "mentalmilestone-a52f3.firebaseapp.com",
+  authDomain: "localhost",
   projectId: "mentalmilestone-a52f3",
   storageBucket: "gs://mentalmilestone-a52f3.appspot.com",
   messagingSenderId: "79553728983",
