@@ -1,6 +1,6 @@
 <div align='center'>
   <h1>Mental Milestone</h1>
-  <img src="https://github.com/kapooraryan/MakeUC/assets/69362333/4170b2c5-39f0-4069-9bf3-b2a8a1c34b8e" width=300px>
+  
 </div>
 
 Mental Milestone is an innovative mental health and well-being application that is designed to create a supportive and empathetic environment for individuals seeking to improve their mental health.
